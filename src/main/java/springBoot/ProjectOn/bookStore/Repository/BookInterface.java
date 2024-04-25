@@ -6,7 +6,7 @@ import springBoot.ProjectOn.bookStore.Entity.Books;
 
 public interface BookInterface extends JpaRepository<Books,Integer> {
     @Query("SELECT b.bookCount FROM Books b WHERE b.bookName = ?1")
-    int findBookCountByBookName(String bookNa
+    int findBookCountByBookName(String bookName);
 
 
 
