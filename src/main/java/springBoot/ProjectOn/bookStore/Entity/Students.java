@@ -35,7 +35,7 @@ public class Students {
                     @JoinColumn(name = "book_id", referencedColumnName = "bookId")
             }
     )
-    @JsonManagedReference
+    @JsonManagedReference //annotation is used in Jackson to handle bidirectional relationships in JSON serialization and deserialization to prevent infinite recursion or duplicate information.
     private Set<Books> booklist;
 
 
