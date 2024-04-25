@@ -31,8 +31,8 @@ public class Books {
     private String bookName;
     private int bookCount;
 
-    @ManyToMany(fetch = FetchType.EAGER,mappedBy = "booklist",cascade = CascadeType.ALL)
-    @JsonBackReference
+    @ManyToMany(fetch = FetchType.EAGER,mappedBy = "booklist",cascade = CascadeType.ALL)  //With FetchType.EAGER, when you retrieve a Books entity from the database, JPA will automatically fetch all associated Students
+    @JsonBackReference //  to prevent infinite recursion during JSON serialization.        //In contrast, with FetchType.LAZY, associated entities are not loaded immediately when you fetch the owning entity (in this case, the Books entity).
     private Set<Students> studentsList;
 
 }
