@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/StudentBooks")
 public class StudentBooks {
+    String nihal ="nn";
     @Autowired
     private BookInterface bookInterface;
     @Autowired
@@ -38,6 +39,7 @@ public class StudentBooks {
     @GetMapping("/getcount/{bookName}")
     public int countOfBook(@PathVariable String bookName){
         return bookInterface.findBookCountByBookName(bookName);
+
     }
 
 
